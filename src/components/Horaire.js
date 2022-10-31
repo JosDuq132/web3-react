@@ -1,3 +1,4 @@
+import {data} from '../data/horaire.js';
 import Depart from './Depart';
 
 /**
@@ -5,11 +6,10 @@ import Depart from './Depart';
  * @return {jsx} Horaire
  */
 function Horaire() {
+  // numero={elt.numero}
   return (
     <ul>
-      <Depart numero={100} origin="St-Jean-sur-Richelieu"/>
-      <Depart numero={110} origin="St-Jean-sur-Richelieu"/>
-      <Depart numero={120} origin="St-Jean-sur-Richelieu"/>
+      {data.map((elt) => <Depart {...elt}/>)};
     </ul>
   );
 }
